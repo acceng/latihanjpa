@@ -48,11 +48,11 @@ public class EmployeeDaoImple implements EmployeeDao{
 
 	@Override
 	public List<Employee> getByName(String name) {
-//		 return entityManager.createNativeQuery("SELECT * FROM employee WHERE name LIKE ?0", Employee.class)
-//		.setParameter(0, "%" + name + "%").getResultList();
+		 return entityManager.createNativeQuery("SELECT * FROM employee WHERE name LIKE ?0", Employee.class)
+		.setParameter(0, "%" + name + "%").getResultList();
 		
-		return entityManager.createQuery("select e from Employee e where e.name like ?0", Employee.class)
-				.setParameter(0, "%" + name + "%").getResultList();
+//		return entityManager.createQuery("select e from Employee e where e.name like ?0", Employee.class)
+//				.setParameter(0, "%" + name + "%").getResultList();
 	}
 	
 	
